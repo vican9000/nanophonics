@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Nanophonics favicon: Signal in a scope">
+  <title>Signal in a scope</title>
+  <rect width="32" height="32" rx="6" fill="#08090b"/>
+  <g transform="translate(0,4)"><circle cx="16" cy="12" r="10.2" fill="none" stroke="#d4ff3f" stroke-width="2.2"/>
+  <path d="M7 12 H10 L11.8 7.4 L14 17 L16.2 9.6 L18 14.4 L19.4 12 H25" fill="none" stroke="#d4ff3f" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter"/></g>
+</svg>

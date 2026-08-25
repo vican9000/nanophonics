@@ -1,36 +1,127 @@
-# 🚀 Nanophonics Landing Page
+# Nanophonics
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c9b9cde6-d8fe-4187-909a-c724e0118a29/deploy-status)](https://app.netlify.com/sites/senzoro-landing/deploys)
+The nanophonics.com one-pager. Static site: **no build step, no dependencies,
+no third-party requests.** Open `index.html` and it works.
 
-Nanophonics is a smart app team from Croatia
+```
+index.html                 the whole page
+CNAME                      custom domain for GitHub Pages
+assets/css/style.css       design tokens + all styling
+assets/js/main.js          canvas visuals, reveals, nav, accordion, form
+assets/fonts/*.woff2       self-hosted variable fonts
+assets/img/team/           team portraits (4:5)
+assets/img/favicon.svg     logo mark
+```
 
-Based on Gatsby 2.0 starter
+Around 1.5 MB total, of which 768 KB is fonts.
 
-## GoogleAnalytics
+---
 
-This site uses [google-analytics](https://analytics.google.com/analytics/web/) to track events.
+## Run it locally
 
-Edit `gatsby-config.js` and enter your GA tracking ID in the `gatsby-plugin-google-analytics`.
+```bash
+python -m http.server 8000     # then open http://localhost:8000
+```
 
-## reCAPTCHA
+A server is only needed because the fonts load with CORS; opening the file
+directly still renders, just with fallback fonts.
 
-This site uses [react-google-recaptcha](https://github.com/dozoisch/react-google-recaptcha) to render the reCAPTCHA widget.
+## Deploy
 
-To make the reCAPTCHA work, you’ll need to do the following:
+Published with GitHub Pages from the `main` branch, root folder. The `CNAME`
+file pins the custom domain, so leave it in place. Pushing to `main` is the
+deploy.
 
-1.  [Sign up for a reCAPTCHA API key pair](http://www.google.com/recaptcha/admin) for your site.
-2.  [Log in to your Netlify account](https://app.netlify.com), and add the following
-    environment variables to your site’s Settings > Build & deploy > Build environment variables:
+---
 
--   `SITE_RECAPTCHA_KEY` with your reCAPTCHA site key.
--   `SITE_RECAPTCHA_SECRET` with your reCAPTCHA secret key.
+## Design
 
-3.  Change the build command for your site to
+**Near-black canvas, one saturated accent, grotesk + mono type pairing, and
+real signal visualisations instead of stock imagery.**
 
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | `#08090b` | page |
+| `--panel` | `#0e1116` | instrument frames |
+| `--acc` | `#d4ff3f` | the single accent |
+| `--cyan` | `#3fe8ff` | data-viz only, never UI |
+| `--f-dsp` | Space Grotesk | headlines |
+| `--f-txt` | Inter | body |
+| `--f-mon` | JetBrains Mono | labels, numbers, metadata |
 
-    echo -e "GATSBY_SITE_RECAPTCHA_KEY=$SITE_RECAPTCHA_KEY\nGATSBY_SITE_RECAPTCHA_SECRET=$SITE_RECAPTCHA_SECRET" >> .env.production && gatsby build
+Everything lives in the `:root` block at the top of `style.css`. Change the
+accent there and the whole site follows.
 
-_Note: There’s probably a more elegant way to make the `SITE_RECAPTCHA_KEY` environment variable available to Gatsby in production. This was just the quickest way I found to make it work without having to duplicate the variable_
+Fonts are self-hosted rather than loaded from Google Fonts: no third-party
+request, no GDPR exposure, and the `latin-ext` subset is included so Croatian
+diacritics render correctly.
 
-To see the reCAPTCHA widget locally, add `GATSBY_SITE_RECAPTCHA_KEY=your-reCAPTCHA-API-site-key`
-to your local [.env.development](https://www.gatsbyjs.org/docs/environment-variables/) file.
+### The visuals are generated at runtime
+
+Five `<canvas>` animations, all drawn in `main.js`. No images, no GIFs.
+
+- **Hero scope** — a harmonic stack buried in band-limited value noise, with a
+  processing edge sweeping left to right. Behind the edge the noise is gone and
+  the trace glows; ahead of it, raw input. The readouts track the sweep.
+- **Machine Learning** — an embedding space, points orbiting into three clusters
+  with a moving decision boundary.
+- **Signal Processing** — one signal decomposed into four components.
+- **Audio Development** — spectrum analyser with a smoothed response curve.
+- **AI Agents** — a hub dispatching calls to tools and sub-agents of three
+  different kinds, several in flight at once, each returning with a result.
+
+Each canvas animates only while it is on screen (`IntersectionObserver`) and
+pauses when the tab is hidden, so idle CPU stays at zero.
+
+---
+
+## Still open
+
+### A form endpoint
+
+The contact form has an empty `action`, so submitting opens the visitor's mail
+client pre-filled to `info@nanophonics.com`. It never dead-ends, but nothing
+lands in an inbox on its own. GitHub Pages has no server side, so this needs a
+third-party endpoint:
+
+```html
+<form class="form" id="contactForm" ... action="https://formspree.io/f/XXXXXXX">
+```
+
+`main.js` detects the endpoint and switches to `fetch`, with success and error
+states already wired. Formspree, Basin and similar all work. A honeypot field
+(`_gotcha`) is in place.
+
+### An OG share image
+
+`assets/img/og.png`, 1200×630. Referenced in the `<head>`; until it exists, link
+previews show text only.
+
+---
+
+## Team photos
+
+Portraits live in `assets/img/team/` at 4:5, 800px wide, shown in full colour.
+Supply them already colour-corrected; the only treatment applied is a gentle
+zoom on hover. If a file is missing, the card falls back to the person's
+initials and a "photo pending" marker rather than breaking.
+
+Uncropped originals are kept outside the repository.
+
+---
+
+## Accessibility & behaviour
+
+- Skip link, visible focus rings, semantic landmarks, `aria-expanded` on every
+  toggle, live region on the form status.
+- `prefers-reduced-motion` is honoured: reveals resolve instantly, canvases draw
+  one static frame, the grain layer is removed.
+- Work entries ship expanded in the markup and collapse only once JavaScript
+  runs, so the copy stays readable without it.
+- Keyboard: everything reachable, Escape closes the mobile menu.
+- Verified at 390 px, 900 px and 1440 px.
+
+## Browser support
+
+Modern evergreen browsers. Uses `IntersectionObserver`, custom properties,
+`backdrop-filter` and `canvas.roundRect`. No polyfills.

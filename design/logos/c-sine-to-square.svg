@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 24" width="128" height="96" role="img" aria-label="Nanophonics mark: Sine into square">
+  <title>Sine into square</title>
+  <path d="M1 12 C2.6 12 2.6 5 4.9 5 C7.2 5 7.2 19 9.5 19 C11.8 19 11.8 12 13.4 12" fill="none" stroke="#d4ff3f" stroke-width="1.7" stroke-linecap="butt"/>
+  <path d="M13.4 12 H16 V5 H20 V19 H24 V12 H31" fill="none" stroke="#d4ff3f" stroke-width="1.7" stroke-linecap="butt" stroke-linejoin="miter"/>
+</svg>

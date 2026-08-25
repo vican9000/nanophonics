@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Nanophonics | Signal Processing, Machine Learning &amp; Audio</title>
+<meta name="description" content="Nanophonics is a signal processing and machine learning studio. We write the maths behind smart audio applications, algorithms and the systems that carry them." />
+<meta name="theme-color" content="#08090b" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Nanophonics. We turn noise into signal." />
+<meta property="og:description" content="A signal processing and machine learning studio. Real-time audio, signal processing algorithms, ML, and native mobile." />
+<meta property="og:url" content="https://www.nanophonics.com/" />
+<meta property="og:image" content="https://www.nanophonics.com/assets/img/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href="https://www.nanophonics.com/" />
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="assets/img/favicon.svg" />
+
+<!-- Fonts are self-hosted in assets/fonts. No third-party requests. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/spacegrotesk-latin.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/jetbrainsmono-latin.woff2" crossorigin />
+
+<link rel="stylesheet" href="assets/css/style.css" />
+
+<!-- Gates the "hidden until revealed" styles. If main.js fails to load or JS is
+     off, this class is never set and every section renders plainly visible. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Nanophonics",
+  "url": "https://www.nanophonics.com/",
+  "email": "info@nanophonics.com",
+  "description": "Signal processing, machine learning, audio development and AI agents.",
+  "address": [
+    { "@type": "PostalAddress", "addressLocality": "Imotski", "addressCountry": "HR" },
+    { "@type": "PostalAddress", "addressLocality": "Zagreb", "addressCountry": "HR" },
+    { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══ grain + grid overlay ══ -->
+<div class="fx-grid" aria-hidden="true"></div>
+<div class="fx-noise" aria-hidden="true"></div>
+
+<!-- ══════════════════ NAV ══════════════════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Nanophonics home">
+      <svg class="brand__mark" viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor">
+        <path class="brand__axis" d="M3 13 H29" stroke-width="1" opacity=".45"/>
+        <path d="M5.5 13 V4 M10 13 V19.2 M14.5 13 V8.8 M19 13 V15.7 M23.5 13 V11.3 M28 13 V14" stroke-width="1.7"/>
+        <g fill="currentColor" stroke="none">
+          <circle cx="5.5" cy="4" r="1.5"/><circle cx="10" cy="19.2" r="1.5"/><circle cx="14.5" cy="8.8" r="1.5"/>
+          <circle cx="19" cy="15.7" r="1.5"/><circle cx="23.5" cy="11.3" r="1.5"/><circle cx="28" cy="14" r="1.5"/>
+        </g>
+      </svg>
+      <span class="brand__word">Nanophonics</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#capabilities" data-nav>Capabilities</a>
+      <a href="#work"         data-nav>Work</a>
+      <a href="#team"         data-nav>Team</a>
+      <a href="#contact"      data-nav>Contact</a>
+    </nav>
+
+    <a class="btn btn--sm nav__cta" href="#contact">
+      <span>Let's discuss</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L13 3 M6 3 h7 v7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a>
+
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilemenu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__rail" aria-hidden="true"><i id="navRail"></i></div>
+</header>
+
+<div class="mobilemenu" id="mobilemenu" hidden>
+  <a href="#capabilities">Capabilities</a>
+  <a href="#work">Work</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Contact</a>
+  <a class="mobilemenu__mail" href="mailto:info@nanophonics.com">info@nanophonics.com</a>
+</div>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="wrap hero__inner">
+
+    <p class="eyebrow" data-r>
+      Signal processing<i>/</i>Machine Learning<i>/</i>Audio<i>/</i>Agents
+    </p>
+
+    <h1 class="hero__h1">
+      <span class="line" data-r data-r-d="1">We turn</span>
+      <span class="line" data-r data-r-d="2"><span class="strike">noise</span></span>
+      <span class="line" data-r data-r-d="3">into <span class="hl">signal<i class="hl__u"></i></span>.</span>
+    </h1>
+
+    <p class="hero__lede" data-r data-r-d="4">
+      Nanophonics is a signal&nbsp;processing and machine&nbsp;learning studio. We write the maths
+      behind smart audio applications, algorithms and the systems that carry them,
+      and we see it through from the first equation to the shipped product.
+    </p>
+
+    <div class="hero__cta" data-r data-r-d="5">
+      <a class="btn btn--fill" href="#contact">
+        <span>Let's discuss</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 L13 3 M6 3 h7 v7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#work"><span>See the work</span></a>
+    </div>
+  </div>
+
+  <!-- live denoise scope -->
+  <figure class="scope" data-r data-r-d="6">
+    <figcaption class="scope__head">
+      <span class="scope__tag">SCOPE / CH1 / TIME DOMAIN</span>
+      <span class="scope__legend">
+        <b class="k k--dim"></b>input
+        <b class="k k--acc"></b>processed
+      </span>
+    </figcaption>
+    <div class="scope__frame">
+      <canvas id="scopeCanvas" aria-label="Animated oscilloscope showing a noisy input signal being cleaned by a processing edge sweeping across the screen." role="img"></canvas>
+      <div class="scope__readout">
+        <span data-ro="snr">SNR &nbsp;+00.0 dB</span>
+        <span data-ro="f0">f₀ &nbsp;000 Hz</span>
+        <span data-ro="lat">LAT &nbsp;0.0 ms</span>
+      </div>
+    </div>
+  </figure>
+
+  <!-- stats -->
+  <div class="wrap">
+    <dl class="stats" data-r>
+      <div class="stats__i"><dt data-count="10" data-suffix="+">10+</dt><dd>years in the audio domain</dd></div>
+      <div class="stats__i"><dt data-count="50" data-suffix="+">50+</dt><dd>products shipped to production</dd></div>
+      <div class="stats__i"><dt class="stats__nc">Dozens</dt><dd>patents, grants and publications</dd></div>
+      <div class="stats__i"><dt class="stats__nc">Fortune&nbsp;500</dt><dd>clients, startups and scale-ups</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ══════════════════ TICKER ══════════════════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <!-- the set is duplicated so the -50% loop meets itself exactly, with no gap -->
+    <div class="ticker__set">
+      <span>real-time signal processing</span><i>◆</i><span>VST&nbsp;/&nbsp;AU plugins</span><i>◆</i><span>speech to text</span><i>◆</i>
+      <span>text to speech</span><i>◆</i><span>music information retrieval</span><i>◆</i><span>sound classification</span><i>◆</i>
+      <span>3D&nbsp;&amp;&nbsp;binaural audio</span><i>◆</i><span>sensor fusion</span><i>◆</i><span>performance optimization</span><i>◆</i>
+      <span>audio codecs</span><i>◆</i><span>biomedical audio</span><i>◆</i><span>AI agents</span><i>◆</i>
+    </div>
+    <div class="ticker__set">
+      <span>real-time signal processing</span><i>◆</i><span>VST&nbsp;/&nbsp;AU plugins</span><i>◆</i><span>speech to text</span><i>◆</i>
+      <span>text to speech</span><i>◆</i><span>music information retrieval</span><i>◆</i><span>sound classification</span><i>◆</i>
+      <span>3D&nbsp;&amp;&nbsp;binaural audio</span><i>◆</i><span>sensor fusion</span><i>◆</i><span>performance optimization</span><i>◆</i>
+      <span>audio codecs</span><i>◆</i><span>biomedical audio</span><i>◆</i><span>AI agents</span><i>◆</i>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ CAPABILITIES ══════════════════ -->
+<section class="sec" id="capabilities">
+  <div class="wrap">
+    <header class="sec__head" data-r>
+      <h2 class="sec__title">Capabilities</h2>
+      <p class="sec__note">Four areas our team specializes in.</p>
+    </header>
+
+    <div class="caps">
+
+      <article class="cap" data-r>
+        <div class="cap__viz"><canvas data-viz="embed" aria-hidden="true"></canvas></div>
+        <div class="cap__body">
+          <h3 class="cap__t">Machine Learning<br/>&amp; Deep Learning</h3>
+          <p>Speech recognition, sound event classification, music information retrieval and source separation are all practical uses of machine learning in audio.</p>
+          <p class="cap__p2">If your problem needs a model trained on your own recordings, and that model has to run inside a latency budget, this is the right place to come.</p>
+          <ul class="tags">
+            <li>sound classification</li><li>source separation</li><li>speech to text</li><li>on-device inference</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cap" data-r>
+        <div class="cap__viz"><canvas data-viz="wave" aria-hidden="true"></canvas></div>
+        <div class="cap__body">
+          <h3 class="cap__t">Signal Processing<br/>&amp; Algorithms</h3>
+          <p>We have an in-depth understanding of the maths and physics behind sound.</p>
+          <p class="cap__p2">A voice pulled out of a noisy room, pitch and tempo estimated from a raw take, a filter that still behaves at the edge of its range. That is the work.</p>
+          <ul class="tags">
+            <li>filter design</li><li>denoising</li><li>time-frequency</li><li>pitch &amp; tempo</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cap" data-r>
+        <div class="cap__viz"><canvas data-viz="spectrum" aria-hidden="true"></canvas></div>
+        <div class="cap__body">
+          <h3 class="cap__t">Audio<br/>Development</h3>
+          <p>We specialize in everything from real-time audio processing to designing 2D and 3D audio solutions, and we take particular interest in custom VST plugins.</p>
+          <p class="cap__p2">Our team has more than ten years of experience in the audio domain.</p>
+          <ul class="tags">
+            <li>real-time engines</li><li>VST&nbsp;/&nbsp;AU</li><li>spatial audio</li><li>codecs</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cap" data-r>
+        <div class="cap__viz"><canvas data-viz="agents" aria-hidden="true"></canvas></div>
+        <div class="cap__body">
+          <h3 class="cap__t">AI<br/>Agents</h3>
+          <p>Chatbots, assistants, copilots and autonomous pipelines that plan, call tools and act on real systems instead of just answering questions.</p>
+          <p class="cap__p2">Retrieval, tool use, memory, orchestration and evaluation, wired into the models and infrastructure your product already runs.</p>
+          <ul class="tags">
+            <li>chatbots</li><li>tool use</li><li>retrieval</li><li>orchestration</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ WORK ══════════════════ -->
+<section class="sec sec--work" id="work">
+  <div class="wrap">
+    <header class="sec__head" data-r>
+      <h2 class="sec__title">Selected work</h2>
+      <p class="sec__note">Media research, smart lighting, music collaboration, medical wearables, heavy industry and city sensing.</p>
+    </header>
+
+    <ol class="work">
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w1">
+          <span class="work__name">Mercury Analytics</span>
+          <span class="work__kicker">Real-time audio sync for media &amp; poll research</span>
+          <span class="work__meta">Audio&nbsp;/&nbsp;Signal&nbsp;processing</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w1">
+          <div class="work__panelIn">
+            <p>Mercury Analytics is a research technology firm in the Washington DC area. Its flagship is M2M dial testing: moment-to-moment response capture for video and audio content, producing frame-accurate sentiment curves.</p>
+            <p class="work__role"><b>Our part:</b> audio synchronization algorithms that align respondent reactions to the media content inside their dial-testing and poll analysis platform.</p>
+            <ul class="tags tags--lg"><li>audio sync</li><li>real-time</li><li>media research</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w2">
+          <span class="work__name">Luke Roberts</span>
+          <span class="work__kicker">The world’s first smart design lamp</span>
+          <span class="work__meta">Machine Learning</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w2">
+          <div class="work__panelIn">
+            <p>Luke Roberts provides unique directional lighting technology powered by artificial intelligence, to give you the perfect light for any situation.</p>
+            <p class="work__role"><b>Our part:</b> senior engineers from Nanophonics provide the machine learning solutions behind this state-of-the-art lamp.</p>
+            <ul class="tags tags--lg"><li>ML models</li><li>embedded</li><li>IoT</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w3">
+          <span class="work__name">Tyxit</span>
+          <span class="work__kicker">Ultra-low-latency online music collaboration</span>
+          <span class="work__meta">Audio&nbsp;/&nbsp;Signal&nbsp;processing</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w3">
+          <div class="work__panelIn">
+            <p>Tyxit lets musicians play together over the internet with latency low enough to stay in time.</p>
+            <p class="work__role"><b>Our part:</b> Nanophonics engineers helped develop novel audio codecs and real-time adaptive latency handling, so performance holds up through strong network interruptions and low bandwidth.</p>
+            <ul class="tags tags--lg"><li>audio codecs</li><li>jitter buffering</li><li>real-time</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w4">
+          <span class="work__name">Muvr</span>
+          <span class="work__kicker">Medical wearables for post-operation recovery</span>
+          <span class="work__meta">Biomedical</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w4">
+          <div class="work__panelIn">
+            <p>Muvr’s proprietary wearable sensors enable real-time joint motion tracking on a smartphone. More than 18,000 data points per minute and intelligent algorithms produce accurate, objective and actionable insight.</p>
+            <p class="work__role"><b>Our part:</b> Nanophonics fine-tuned the signal processing algorithms in order to improve patient recovery rates.</p>
+            <ul class="tags tags--lg"><li>sensor fusion</li><li>motion tracking</li><li>mobile</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w5">
+          <span class="work__name">FlowCommand</span>
+          <span class="work__kicker">Software &amp; hardware for oil &amp; gas</span>
+          <span class="work__meta">Algorithms</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w5">
+          <div class="work__panelIn">
+            <p>FlowCommand is a full-service technology company providing software and hardware for oil &amp; gas companies. Their mission is simple: reduce risk and cost with expertly architected, breakthrough technology.</p>
+            <p class="work__role"><b>Our part:</b> we contributed the velocity tracking and prediction technology, through signal processing and algorithm work.</p>
+            <ul class="tags tags--lg"><li>estimation</li><li>prediction</li><li>industrial</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w6">
+          <span class="work__name">Senzoro</span>
+          <span class="work__kicker">Ultrasound-based AI for predictive maintenance</span>
+          <span class="work__meta">Machine Learning</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w6">
+          <div class="work__panelIn">
+            <p>Senzoro is a Vienna-based company doing predictive maintenance with ultrasound and AI, detecting bearing damage, lubrication problems and cavitation on industrial machines.</p>
+            <p class="work__role"><b>Our part:</b> machine learning algorithms that predict failures in CNC and similar machines from ultrasonic sensor data.</p>
+            <ul class="tags tags--lg"><li>ultrasound</li><li>predictive maintenance</li><li>classification</li></ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="work__row" data-r>
+        <button class="work__btn" aria-expanded="true" aria-controls="w7">
+          <span class="work__name">Leapcraft</span>
+          <span class="work__kicker">Noise detection &amp; classification for smart environments</span>
+          <span class="work__meta">Machine Learning</span>
+          <span class="work__plus" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <div class="work__panel" id="w7">
+          <div class="work__panelIn">
+            <p>Leapcraft is a Copenhagen company doing sensing-as-a-service for smart cities and buildings, covering air quality, noise and thermal comfort.</p>
+            <p class="work__role"><b>Our part:</b> noise detection and classification algorithms for environmental sensing in cities and buildings.</p>
+            <ul class="tags tags--lg"><li>sound classification</li><li>environmental sensing</li><li>edge</li></ul>
+          </div>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════════ TEAM ══════════════════ -->
+<section class="sec sec--team" id="team">
+  <div class="wrap">
+    <header class="sec__head" data-r>
+      <h2 class="sec__title">The team</h2>
+      <p class="sec__note">Small on purpose. The people you meet are the people who write the code.</p>
+    </header>
+
+    <div class="team">
+
+      <article class="member" data-r>
+        <div class="member__photo">
+          <img src="assets/img/team/ivan-vican.jpg" alt="Ivan Vican" loading="lazy" decoding="async" onerror="this.closest('.member__photo').classList.add('is-empty')" />
+          <span class="member__ph" aria-hidden="true">IV</span>
+        </div>
+        <div class="member__info">
+          <h3>Ivan Vican</h3>
+          <p class="member__role">Algorithms Engineer</p>
+          <p>Signal processing and algorithms engineer with interests and experience across several domains: biomedicine, acoustics, sensors and IoT.</p>
+          <p>Freelance consultant in several fields concerning audio applications and signal processing algorithms.</p>
+        </div>
+      </article>
+
+      <article class="member" data-r>
+        <div class="member__photo">
+          <img src="assets/img/team/marino-vican.jpg" alt="Marino Vican" loading="lazy" decoding="async" onerror="this.closest('.member__photo').classList.add('is-empty')" />
+          <span class="member__ph" aria-hidden="true">MV</span>
+        </div>
+        <div class="member__info">
+          <h3>Marino Vican</h3>
+          <p class="member__role">AI &amp; Machine Learning Engineer</p>
+          <p>Specializing in audio AI, deep learning and generative models, with a strong background in audio signal processing and music technology.</p>
+          <p>Research interests include generative audio, neural audio codecs and multimodal learning.</p>
+        </div>
+      </article>
+
+      <article class="member" data-r>
+        <div class="member__photo">
+          <img src="assets/img/team/filip-dropuljic.jpg" alt="Filip Dropuljić" loading="lazy" decoding="async" onerror="this.closest('.member__photo').classList.add('is-empty')" />
+          <span class="member__ph" aria-hidden="true">FD</span>
+        </div>
+        <div class="member__info">
+          <h3>Filip Dropuljić</h3>
+          <p class="member__role">AI &amp; Machine Learning Engineer</p>
+          <p>AI/ML engineer with experience in machine learning, generative AI, and intelligent software systems.</p>
+          <p>Interests include large language models, audio AI, and applied artificial intelligence.</p>
+        </div>
+      </article>
+
+      <article class="member" data-r>
+        <div class="member__photo">
+          <img src="assets/img/team/ivan-fabijanovic.jpg" alt="Ivan Fabijanović" loading="lazy" decoding="async" onerror="this.closest('.member__photo').classList.add('is-empty')" />
+          <span class="member__ph" aria-hidden="true">IF</span>
+        </div>
+        <div class="member__info">
+          <h3>Ivan Fabijanović</h3>
+          <p class="member__role">Mobile Engineer</p>
+          <p>Software Engineer specialized in iOS development.</p>
+          <p>Specializing in mobile and web applications, reactive programming, computer graphics and blockchain/crypto.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CONTACT ══════════════════ -->
+<section class="sec sec--contact" id="contact">
+  <div class="wrap">
+    <header class="sec__head" data-r>
+      <h2 class="sec__title">Let's talk <br class="br-m"/>signal.</h2>
+      <p class="sec__note">Tell us what you are trying to measure, hear or predict. We will tell you honestly whether we are the right people.</p>
+    </header>
+
+    <div class="contact">
+
+      <div class="contact__bar" data-r>
+        <p class="bigmail">info@nanophonics.com</p>
+        <dl class="details">
+          <div>
+            <dt>Studio locations</dt>
+            <dd>Imotski, Croatia<i>/</i>Zagreb, Croatia<i>/</i>Los Angeles, USA</dd>
+          </div>
+        </dl>
+      </div>
+
+      <form class="form" id="contactForm" data-r novalidate
+            method="POST"
+            action=""
+            name="contact" data-netlify="true" netlify-honeypot="_gotcha">
+        <!-- On Netlify hosting the attributes above register the form at deploy
+             time and submissions land in the Netlify dashboard. Anywhere else,
+             set a Formspree/Basin endpoint in `action`; with neither, the form
+             falls back to opening the visitor's mail client. -->
+        <input type="hidden" name="form-name" value="contact" />
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com" />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field field--full">
+          <label for="f-subject">Subject</label>
+          <input id="f-subject" name="subject" type="text" placeholder="What is it about?" />
+          <span class="field__err" data-err></span>
+        </div>
+        <div class="field field--full">
+          <label for="f-message">Message</label>
+          <textarea id="f-message" name="message" rows="5" required placeholder="Tell us what you have in mind."></textarea>
+          <span class="field__err" data-err></span>
+        </div>
+
+        <!-- honeypot -->
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <div class="form__foot">
+          <button class="btn btn--fill" type="submit">
+            <span>Send message</span>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8 h11 M9 4 l4 4 l-4 4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+          </button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__top">
+      <a class="brand brand--foot" href="#top">
+        <svg class="brand__mark" viewBox="0 0 32 24" aria-hidden="true" fill="none" stroke="currentColor">
+          <path class="brand__axis" d="M3 13 H29" stroke-width="1" opacity=".45"/>
+          <path d="M5.5 13 V4 M10 13 V19.2 M14.5 13 V8.8 M19 13 V15.7 M23.5 13 V11.3 M28 13 V14" stroke-width="1.7"/>
+          <g fill="currentColor" stroke="none">
+            <circle cx="5.5" cy="4" r="1.5"/><circle cx="10" cy="19.2" r="1.5"/><circle cx="14.5" cy="8.8" r="1.5"/>
+            <circle cx="19" cy="15.7" r="1.5"/><circle cx="23.5" cy="11.3" r="1.5"/><circle cx="28" cy="14" r="1.5"/>
+          </g>
+        </svg>
+        <span class="brand__word">Nanophonics</span>
+      </a>
+      <p class="foot__claim">Signal processing&nbsp;· AI&nbsp;· audio&nbsp;· agents</p>
+      <a class="foot__up" href="#top" aria-label="Back to top">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14 V2 M3 7 l5-5 l5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </a>
+    </div>
+
+    <dl class="legal">
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:info@nanophonics.com">info@nanophonics.com</a></dd>
+      </div>
+      <div>
+        <dt>Studios</dt>
+        <dd>Imotski, Croatia<br/>Zagreb, Croatia<br/>Los Angeles, USA</dd>
+      </div>
+      <div>
+        <dt>Explore</dt>
+        <dd><a href="#capabilities">Capabilities</a><br/><a href="#work">Work</a><br/><a href="#team">Team</a><br/><a href="#contact">Contact</a></dd>
+      </div>
+    </dl>
+
+    <div class="foot__bar">
+      <span>© <span id="year">2026</span> Nanophonics</span>
+      <span class="foot__coord">All rights reserved</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

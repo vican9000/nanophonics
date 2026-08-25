@@ -1,0 +1,15 @@
+# Static site: there is nothing to build. This file overrides whatever build
+# settings the connected Netlify site has in its UI (they were set up for the
+# old Gatsby project), so pushing this repo deploys the files as they are.
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
