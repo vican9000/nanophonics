@@ -1,7 +1,9 @@
-# Static site: there is nothing to build. This file overrides whatever build
-# settings the connected Netlify site has in its UI (they were set up for the
-# old Gatsby project), so pushing this repo deploys the files as they are.
+# Static site: there is nothing to build. The explicit no-op command below
+# overrides the Gatsby build command still stored in the Netlify UI; toml
+# only wins for keys it actually sets, which is why publish alone was not
+# enough and the first deploy failed on "gatsby: command not found".
 [build]
+  command = "echo static site, nothing to build"
   publish = "."
 
 [[headers]]
