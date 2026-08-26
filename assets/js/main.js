@@ -807,10 +807,11 @@ const CYAN = css('--cyan') || '#3fe8ff';
     const data = Object.fromEntries(new FormData(form).entries());
     let endpoint = form.getAttribute('action');
 
-    /* On Netlify hosting the platform itself accepts the POST at "/"; the
-       data-netlify attributes register the form at deploy time. GitHub Pages
-       has no server side, so the same markup skips this branch there. */
-    const onNetlify = form.hasAttribute('data-netlify') &&
+    /* On Netlify hosting the platform itself accepts the POST at "/".
+       Netlify strips the data-netlify attribute from the published HTML when
+       it registers the form, so detect by the hidden form-name input it
+       keeps instead. GitHub Pages has no server side, so skip there. */
+    const onNetlify = !!$('input[name="form-name"]', form) &&
                       !/(^|\.)github\.io$/.test(location.hostname) &&
                       location.protocol !== 'file:';
     if (!endpoint && onNetlify) endpoint = '/';
