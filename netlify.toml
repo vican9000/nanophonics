@@ -1,10 +1,10 @@
-# Static site: there is nothing to build. The explicit no-op command below
-# overrides the Gatsby build command still stored in the Netlify UI; toml
-# only wins for keys it actually sets, which is why publish alone was not
-# enough and the first deploy failed on "gatsby: command not found".
+# Static site. The site config on Netlify still carries Gatsby-era settings
+# in its UI (build command, and a deploy stage that insists on a directory
+# named "public"), so the simplest robust move is to assemble the site into
+# public/ ourselves and publish that.
 [build]
-  command = "echo static site, nothing to build"
-  publish = "."
+  command = "rm -rf public && mkdir public && cp -r index.html assets public/"
+  publish = "public"
 
 [[headers]]
   for = "/assets/fonts/*"
