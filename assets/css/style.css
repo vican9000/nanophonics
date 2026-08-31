@@ -788,17 +788,6 @@ main,.nav,.foot{ position:relative; z-index:2; }
 }
 .js [data-r].is-in{ opacity:1; transform:none; }
 
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  *,*::before,*::after{
-    animation-duration:.01ms !important;
-    animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;
-  }
-  [data-r]{ opacity:1 !important; transform:none !important; }
-  .fx-noise{ display:none; }
-}
-
 /* ── 13. RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 1080px){
   /* stack the row: name + toggle on line 1, then kicker, then meta.

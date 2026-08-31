@@ -11,7 +11,9 @@
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+/* Owner's call: animations run for everyone, the OS reduced-motion
+   preference is deliberately not honoured on this site. */
+const REDUCED = false;
 
 /** Deterministic 1-D value noise — smooth, cheap, no RNG state. */
 const hash = n => { const s = Math.sin(n * 127.1) * 43758.5453; return s - Math.floor(s); };
