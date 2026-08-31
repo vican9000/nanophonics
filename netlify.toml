@@ -3,7 +3,7 @@
 # named "public"), so the simplest robust move is to assemble the site into
 # public/ ourselves and publish that.
 [build]
-  command = "rm -rf public && mkdir public && cp -r index.html assets public/"
+  command = "rm -rf public && mkdir public && cp -r index.html assets robots.txt sitemap.xml public/"
   publish = "public"
 
 [[headers]]
